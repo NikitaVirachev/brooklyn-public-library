@@ -1,0 +1,138 @@
+.modal-profile {
+  width: 60rem;
+  height: 40rem;
+
+  display: grid;
+  grid-template-columns: 1fr 43rem;
+
+  .close-btn {
+    right: 2.5rem;
+    top: 2.5rem;
+  }
+
+  &__user {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    background: var(--color-dark-grey);
+    padding: 0.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+    background: var(--color-white);
+    color: var(--color-primary);
+    text-transform: capitalize;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__name {
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 0.5rem 1.5rem;
+    overflow-wrap: normal;
+    text-align: center;
+  }
+
+  &__about {
+    background: var(--color-white);
+    padding: 4rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__header {
+    color: var(--color-black);
+    font-family: 'Forum', sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cards-profile {
+    gap: 2rem;
+  }
+
+  .cards-profile__title {
+    font-size: 2rem;
+    letter-spacing: 0.4px;
+  }
+
+  .cards-profile__info {
+    gap: 1rem;
+  }
+
+  &__books {
+    color: var(--color-dark-grey);
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    height: 10rem;
+    overflow: auto;
+  }
+
+  &__list {
+    margin-left: 3.1rem;
+  }
+
+  &__item {
+    color: var(--color-black);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__card {
+    color: var(--color-dark-grey);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__card-number {
+    color: var(--color-primary);
+  }
+
+  &__copy-btn {
+    cursor: pointer;
+  }
+}

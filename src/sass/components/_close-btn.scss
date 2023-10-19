@@ -1,0 +1,16 @@
+.close-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  background: no-repeat center/cover url(../src/img/icons/close_btn.svg);
+
+  &--white {
+    background: no-repeat center/cover url(../src/img/icons/close_btn_white.svg);
+  }
+}

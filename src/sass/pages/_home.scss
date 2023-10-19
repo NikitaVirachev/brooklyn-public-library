@@ -1,0 +1,417 @@
+.section {
+  @include center-block;
+  padding: 2rem 2rem 4rem 2rem;
+
+  &__description {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  &__welcome {
+    height: 60rem;
+    padding: 22rem 0 0 0;
+    background-blend-mode: screen;
+    background: linear-gradient(
+        180deg,
+        var(--color-dark-grey) 0%,
+        var(--color-dark-grey) 0.01%,
+        rgba(18, 18, 21, 0.1) 100%
+      ),
+      no-repeat center/cover url(../src/img/Welcome.jpg);
+    position: relative;
+  }
+
+  &__about {
+    padding-bottom: 3.5rem;
+  }
+
+  &__carousel-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__favorites,
+  &__coffee-shop,
+  &__contacts,
+  &__library-card,
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__coffee-shop {
+    letter-spacing: 2px;
+  }
+}
+
+.wrapper {
+  background: var(--color-dark-grey);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome {
+  background-color: var(--color-dark-grey);
+  width: 60rem;
+  height: 22rem;
+  padding: 3.5rem 4rem;
+}
+
+.book {
+  text-align: start;
+  color: var(--color-black);
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+  position: relative;
+  border: 1px solid var(--color-black);
+  padding: 1.5rem 0 1.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: var(--width-book);
+  height: var(--height-book);
+
+  &:nth-child(even) {
+    justify-self: end;
+
+    @include respond(tab-land) {
+      justify-self: center;
+    }
+  }
+
+  &__container {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(var(--width-book), 1fr));
+    grid-auto-rows: auto;
+    gap: 4rem 5rem;
+    padding-right: 4rem;
+
+    opacity: 0;
+    animation: 0.5s ease-in-out;
+
+    @include respond(tab-land) {
+      justify-items: center;
+    }
+
+    &--active {
+      opacity: 1;
+      display: grid;
+    }
+
+    &--hidden {
+      animation-name: disappearance;
+      animation-direction: reverse;
+    }
+
+    &--showed {
+      animation-name: disappearance;
+    }
+  }
+
+  &__picks {
+    font-family: 'Forum', sans-serif;
+    font-size: 2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      height: 0.1rem;
+      width: 6rem;
+      background-color: var(--color-primary);
+    }
+  }
+
+  &__name,
+  &__description {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__name {
+    font-weight: 700;
+    margin-top: 1.9rem;
+    margin-bottom: 1.8rem;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    padding-right: 17.1rem;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: -1px;
+    right: -4.1rem;
+    width: 20rem;
+    height: 30rem;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+}
+
+@keyframes disappearance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  &--left {
+    align-items: start;
+  }
+
+  &--right {
+    align-items: end;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(calc((var(--width-small-desktop) - 2rem * 2) / 2), 1fr)
+    );
+    grid-auto-rows: auto;
+    row-gap: 4rem;
+  }
+
+  &__title {
+    color: var(--color-primary);
+    font-family: 'Forum', sans-serif;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 4rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 4rem 6rem;
+    align-items: center;
+  }
+
+  &__position,
+  &__price {
+    color: var(--color-black);
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 4rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+
+  &--left &__position {
+    justify-self: start;
+  }
+
+  &--right &__position {
+    justify-self: end;
+  }
+
+  &__position {
+    font-family: 'Inter', sans-serif;
+  }
+
+  &__price {
+    font-family: 'Forum', sans-serif;
+  }
+
+  &__separator {
+    width: 10rem;
+    height: 0.1rem;
+    background-color: var(--color-primary);
+  }
+}
+
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @include respond(tab-land) {
+    grid-template-columns: 1fr;
+    row-gap: 10rem;
+  }
+
+  &__details {
+    color: var(--color-black);
+    text-align: start;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    font-size: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__details-block {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__map {
+    height: 41.4rem;
+    // background: 10% / cover no-repeat url(../src/img/map.png);
+  }
+
+  &__tel:link,
+  &__tel:visited,
+  &__mail:link,
+  &__mail:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.library-card {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--width-library-card-form), 1fr)
+  );
+  row-gap: 2rem;
+
+  &__find {
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    width: var(--width-library-card-form);
+
+    @include respond(tab-land) {
+      justify-self: center;
+    }
+  }
+
+  &__title {
+    color: var(--color-black);
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    line-height: normal;
+    letter-spacing: 0.6px;
+
+    &--forum {
+      font-family: 'Forum', sans-serif;
+    }
+  }
+
+  &__account {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    align-items: flex-end;
+    text-align: end;
+    width: 46rem;
+
+    @include respond(tab-land) {
+      text-align: center;
+      justify-self: center;
+      align-items: center;
+      gap: 4rem;
+      width: var(--width-library-card-form);
+    }
+  }
+
+  &__description {
+    color: var(--color-black);
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    line-height: 4rem;
+    letter-spacing: 0.4px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+.footer {
+  background: var(--color-dark-grey);
+  color: var(--color-white);
+  font-family: 'Inter', sans-serif;
+
+  &--left {
+    justify-self: start;
+    text-align: start;
+  }
+
+  &--right {
+    justify-self: right;
+    text-align: end;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: 'Inter', sans-serif;
+  }
+
+  &__data {
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    display: grid;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__media {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  &__separator {
+    border-bottom: 1px solid var(--color-white);
+    margin: 2.9rem 0 4.6rem 0;
+  }
+
+  &__author {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    padding-bottom: 0.4rem;
+
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 2px;
+    text-align: center;
+
+    @include respond(tab-land) {
+      grid-template-columns: repeat(3, auto);
+    }
+  }
+}

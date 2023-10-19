@@ -1,0 +1,21 @@
+.cards-profile {
+  display: flex;
+
+  color: var(--color-black);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.2px;
+  text-transform: capitalize;
+  text-align: center;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      height: 2.1rem;
+    }
+  }
+}

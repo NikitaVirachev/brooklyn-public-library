@@ -1,0 +1,105 @@
+.header {
+  @include center-block;
+  color: var(--color-white);
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4rem;
+
+  &__tittle {
+    font-size: 3rem;
+    font-family: 'Forum', sans-serif;
+    line-height: 5rem;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+  }
+
+  &__icon-profile,
+  &__burger {
+    cursor: pointer;
+    background: inherit;
+    border: none;
+    z-index: 20;
+  }
+
+  &__initials-icon {
+    background: var(--color-white);
+    color: var(--color-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__icon-profile {
+    position: relative;
+
+    @include respond(tab-land) {
+      justify-self: end;
+    }
+  }
+
+  .navigation {
+    justify-self: end;
+  }
+
+  &__burger {
+    display: none;
+    @include respond(tab-land) {
+      display: block;
+      width: 4.5rem;
+      height: 3.2rem;
+
+      position: relative;
+
+      &--open {
+        .header__burger-icon--open {
+          opacity: 1;
+        }
+
+        .header__burger-icon--close {
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  &__burger-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in;
+
+    &--open {
+      opacity: 0;
+    }
+
+    &--close {
+      opacity: 1;
+    }
+  }
+
+  &__backarea {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -10;
+
+    &--show {
+      z-index: 5;
+    }
+  }
+}
