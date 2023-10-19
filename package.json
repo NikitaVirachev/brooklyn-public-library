@@ -2,20 +2,36 @@
   "name": "library",
   "version": "1.0.0",
   "description": "",
+  "main": "",
+  "browserslist": [
+    "> 0.25%, not dead"
+  ],
   "private": true,
   "scripts": {
-    "watch:sass": "sass src/sass/main.scss dist/style.css -w",
-    "devserver": "live-server",
-    "webpack": "webpack -w",
-    "start": "npm-run-all --parallel webpack devserver watch:sass"
+    "start": "webpack serve",
+    "build": "webpack",
+    "clear": "rd /s /q dist"
   },
   "author": "Nikita Virachev",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.3",
+    "image-webpack-loader": "^8.1.0",
     "live-server": "^1.1.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.64.1",
-    "webpack": "^5.88.2",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "postcss-preset-env": "^9.2.0",
+    "sass": "^1.69.4",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   }

@@ -1,3 +1,5 @@
+import profileIcon from '/src/img/icons/icon_profile.svg';
+
 class HeaderMenuView {
   #header = document.querySelector('#header');
   #navigation = document.querySelector('#navigation');
@@ -110,7 +112,7 @@ class HeaderMenuView {
 
       this.#iconProfile.insertAdjacentHTML(
         'afterbegin',
-        '<img src="./src/img/icons/icon_profile.svg" alt="Icon of profile" />'
+        `<img src="${profileIcon}" alt="Icon of profile" />`
       );
     }
 

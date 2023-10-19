@@ -1,3 +1,6 @@
+import '../index.html';
+import '../sass/main.scss';
+
 import headerMenuView from './Views/headerMenuView';
 import carouselView from './Views/carouselView';
 import favoritesView from './Views/favoritesView';

@@ -8,9 +8,9 @@
   border: none;
   cursor: pointer;
 
-  background: no-repeat center/cover url(../src/img/icons/close_btn.svg);
+  background: no-repeat center/cover url(/src/img/icons/close_btn.svg);
 
   &--white {
-    background: no-repeat center/cover url(../src/img/icons/close_btn_white.svg);
+    background: no-repeat center/cover url(/src/img/icons/close_btn_white.svg);
   }
 }
